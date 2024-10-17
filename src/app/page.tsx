@@ -1,14 +1,8 @@
-import styles from "./page.module.css";
-import SongSidebar from "./components/SongSidebar.tsx"
-import SongView from "./components/SongView.tsx"
+import { preloadAccess } from "./utils/get-access"
+import { redirect } from "next/navigation"
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <SongSidebar />
-        <SongView />
-      </main>
-    </div>
-  );
+export default async function Home() {
+  //preloadAccess();
+
+  redirect('/songs');
 }
